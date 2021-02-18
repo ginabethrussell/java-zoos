@@ -30,23 +30,23 @@ public class Auditable
     @Temporal(TemporalType.TIMESTAMP)
     protected Date lastmodifieddate;
 
-    public String getCreatedby()
-    {
-        return createdby;
-    }
-
-    public Date getCreateddate()
-    {
-        return createddate;
-    }
-
-    public String getLastmodifiedby()
-    {
-        return lastmodifiedby;
-    }
-
-    public Date getLastmodifieddate()
-    {
-        return lastmodifieddate;
-    }
+//    public String getCreatedby()
+//    {
+//        return createdby;
+//    }
+//
+//    public Date getCreateddate()
+//    {
+//        return createddate;
+//    }
+//
+//    public String getLastmodifiedby()
+//    {
+//        return lastmodifiedby;
+//    }
+//
+//    public Date getLastmodifieddate()
+//    {
+//        return lastmodifieddate;
+//    }
 }
