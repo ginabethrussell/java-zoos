@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="zoos")
-public class Zoo
+public class Zoo extends Auditable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,6 +36,16 @@ public class Zoo
 
     public Zoo()
     {
+        // default constructor
+    }
+
+    // constructor for seed data
+    public Zoo(
+        long zooid,
+        String zooname)
+    {
+        this.zooid = zooid;
+        this.zooname = zooname;
     }
 
     public long getZooid()
