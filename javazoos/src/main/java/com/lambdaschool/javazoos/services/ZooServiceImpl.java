@@ -41,11 +41,19 @@ public class ZooServiceImpl implements ZooService
         .orElseThrow(() -> new EntityNotFoundException("Zoo " + zooid + " Not Found"));
     }
 
+    // Handles PUT and POST
     @Transactional
     @Override
     public Zoo save(Zoo zoo)
     {
         Zoo newZoo = new Zoo();
+
+        if(zoo.getZooid() != 0)
+        {
+            zooRepository.findById(zoo.getZooid())
+                .orElseThrow(() -> new EntityNotFoundException("Zoo " + zoo.getZooid() + " Not Found"));
+            newZoo.setZooid(zoo.getZooid());
+        }
         newZoo.setZooname(zoo.getZooname());
 
         newZoo.getTelephones().clear();

@@ -56,6 +56,17 @@ public class ZoosController
         return new ResponseEntity<>(responseHeaders, HttpStatus.CREATED);
     }
 
+    // http://localhost:2019/zoos/zoo
+    // Post route to create a new zoo, no body data returned, status Created, return location in header
+    @PutMapping(value="/zoo/{zooid}", consumes="application/json")
+    public ResponseEntity<?> updateZoo(@Valid @RequestBody Zoo updatedZoo, @PathVariable long zooid)
+    {
+        updatedZoo.setZooid(zooid);
+        updatedZoo =  zooService.save(updatedZoo);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @DeleteMapping(value="/zoo/{zooid}")
     public ResponseEntity<?> deleteZoo(@PathVariable long zooid)
     {
