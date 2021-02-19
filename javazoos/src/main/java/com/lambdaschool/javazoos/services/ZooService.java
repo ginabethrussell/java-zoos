@@ -9,4 +9,8 @@ public interface ZooService
     List<Zoo> findAll();
 
     Zoo findZooById(long zooid);
+
+    Zoo save(Zoo zoo);
+
+    void delete(long zooid);
 }

@@ -32,26 +32,21 @@ public class Swagger2Config
         return new Docket(DocumentationType.SWAGGER_2)
             .select()
             .apis(RequestHandlerSelectors
-                .basePackage("com.lambdaschool"))
+                .basePackage("com.lambdaschool.javazoos"))
             .paths(PathSelectors.regex("/.*"))
             .build()
             .apiInfo(apiEndPointsInfo());
     }
 
-    /**
-     * Configures some information related to the Application for Swagger
-     *
-     * @return ApiInfo a Swagger object containing identification information for this application
-     */
     private ApiInfo apiEndPointsInfo()
     {
-        return new ApiInfoBuilder().title("Java Zoos Module Project")
-            .description("Java Zoos Module Project")
+        return new ApiInfoBuilder().title("Java Zoos")
+            .description("A Project Used to Build a Java/Spring RDBMS")
             .contact(new Contact("Gina Russell",
                 "http://www.lambdaschool.com",
-                "gina-russell@lambdasstudents.com"))
+                "gina-russell@lambdastudents.com"))
             .license("MIT")
-            .licenseUrl("https://github.com/ginabethrussell/java-zoos/tree/gina-russell/blob/master/LICENSE")
+            .licenseUrl("https://github.com/ginabethrussell/java-zoos/blob/master/LICENSE")
             .version("1.0.0")
             .build();
     }

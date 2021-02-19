@@ -17,5 +17,7 @@ public interface AnimalRepository extends CrudRepository<Animal, Long>
         "ORDER BY animaltype", nativeQuery = true)
     List<AnimalZooCount> getAnimalZooList();
 
+    Animal findAnimalByAnimaltype(String type);
+
 
 }
